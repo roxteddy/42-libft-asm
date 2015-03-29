@@ -1,37 +1,24 @@
 ;******************************************************************************;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_strcat.s                                        :+:      :+:    :+:    ;
+;    ft_strlen.s                                        :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
-;    Created: 2015/03/27 20:57:34 by mfebvay           #+#    #+#              ;
-;    Updated: 2015/03/27 22:32:31 by mfebvay          ###   ########.fr        ;
+;    Created: 2015/03/27 22:34:47 by mfebvay           #+#    #+#              ;
+;    Updated: 2015/03/28 00:05:52 by mfebvay          ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
 section .text
-global _ft_strcat
+global _ft_strlen
 
-_ft_strcat:
-mov	rax, rdi
-
-start:
-	cmp [rdi], byte 0
-	jz next
-	inc rdi
-	jmp start
-
-next:
-	cmp [rsi], byte 0
-	je end
-	mov r11, [rsi]
-	mov [rdi], r11
-	inc rdi
-	inc rsi
-	jmp next
-
-end:
-	mov [rdi], byte 0
+_ft_strlen:
+	mov rax, 0
+	mov rcx, -1
+	repne scasb
+	mov rax, rcx
+	neg rax
+	sub rax, 2
 	ret
 

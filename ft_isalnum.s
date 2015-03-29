@@ -1,37 +1,36 @@
 ;******************************************************************************;
 ;                                                                              ;
 ;                                                         :::      ::::::::    ;
-;    ft_strcat.s                                        :+:      :+:    :+:    ;
+;    ft_isalnum.s                                       :+:      :+:    :+:    ;
 ;                                                     +:+ +:+         +:+      ;
 ;    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
-;    Created: 2015/03/27 20:57:34 by mfebvay           #+#    #+#              ;
-;    Updated: 2015/03/27 22:32:31 by mfebvay          ###   ########.fr        ;
+;    Created: 2015/03/29 23:46:33 by mfebvay           #+#    #+#              ;
+;    Updated: 2015/03/29 23:49:34 by mfebvay          ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
 section .text
-global _ft_strcat
+	global _ft_isalnum
 
-_ft_strcat:
-mov	rax, rdi
+_ft_isalnum:
+	cmp rdi, byte 0x30
+	jb false
+	cmp rdi, byte 0x7a
+	ja false
+	cmp rdi, byte 0x39
+	jbe true
+	cmp rdi, byte 0x61
+	jae true
+	cmp rdi, byte 0x41
+	jb false
+	cmp rdi, byte 0x5a
+	jbe true
 
-start:
-	cmp [rdi], byte 0
-	jz next
-	inc rdi
-	jmp start
-
-next:
-	cmp [rsi], byte 0
-	je end
-	mov r11, [rsi]
-	mov [rdi], r11
-	inc rdi
-	inc rsi
-	jmp next
-
-end:
-	mov [rdi], byte 0
+false:
+	mov rax, dword 0
 	ret
 
+true:
+	mov rax, dword -1
+	ret
