@@ -9,6 +9,8 @@ int		isdigit(int c);
 int		ft_toupper(int c);
 int		ft_strlen(const char *s);
 void	ft_cat(int fd);
+int		ft_puts(const char *s);
+void	*ft_memset(void *b, int c, size_t len);
 
 int main(void)
 {
@@ -39,11 +41,19 @@ int main(void)
 	printf("%u\n", ft_strlen("12345"));
 	printf("%u\n", ft_strlen("123456789"));
 	printf("%u\n", ft_strlen("12345jfwes'fgjkvsdgkvsg,srgopdrbmpdbopdrbmdb,df;bkmd;b,"));
-
+/*
 	int fd = open("ft_bzero.s", O_RDONLY);
 
 	ft_cat(0);
 	close(fd);
+*/
+//	ft_puts("coucouc les copaina wfdskegfo srgk");
+	printf("puts return : %d\n", ft_puts("coucouc les copaina wfdskegfo srgk"));
+	ft_memset(str1, '8', 5);
+	printf("-%s-\n", str1);
+
+
+
 	return (0);
 }
 

@@ -6,14 +6,15 @@
 #    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/20 19:47:44 by mfebvay           #+#    #+#              #
-#    Updated: 2015/03/29 18:59:12 by mfebvay          ###   ########.fr        #
+#    Updated: 2015/03/30 01:44:34 by mfebvay          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 .PHONY: all clean fclean re
 
 NAME    = asm
-SRC		= ft_bzero.s ft_isalpha.s ft_strcat.s ft_strlen.s ft_toupper.s ft_cat.s
+SRC		= ft_bzero.s ft_isalpha.s ft_strcat.s ft_strlen.s ft_toupper.s ft_cat.s \
+		  ft_puts.s ft_memset.s
 OBJ		= $(SRC:%.s=%.o)
 
 all: $(NAME)
