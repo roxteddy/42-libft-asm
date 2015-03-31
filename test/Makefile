@@ -6,28 +6,28 @@
 #    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/20 19:47:44 by mfebvay           #+#    #+#              #
-#    Updated: 2015/03/30 01:44:34 by mfebvay          ###   ########.fr        #
+#    Updated: 2015/03/31 06:40:15 by mfebvay          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re libfts
 
-NAME    = asm
-SRC		= ft_bzero.s ft_isalpha.s ft_strcat.s ft_strlen.s ft_toupper.s ft_cat.s \
-		  ft_puts.s ft_memset.s
-OBJ		= $(SRC:%.s=%.o)
+NAME    = a.out
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	gcc -c main.c
-	ld -macosx_version_min 10.8 -lsystem main.o $(OBJ)
+$(NAME): main.c libfts
+	gcc -c main.c -I.. -Wall -Wextra -Werror
+	ld -macosx_version_min 10.8 -lsystem main.o -L.. -lfts
 
 %.o:%.s
 	/usr/local/Cellar/nasm/2.11.08/bin//nasm -f macho64 $<
 
+libfts:
+	make -C ..
+
 clean:
-	/bin/rm -f $(OBJ)
+	/bin/rm -f main.o
 
 fclean: clean
 	/bin/rm -f $(NAME)

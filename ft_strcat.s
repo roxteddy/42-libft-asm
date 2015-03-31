@@ -6,7 +6,7 @@
 ;    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/03/27 20:57:34 by mfebvay           #+#    #+#              ;
-;    Updated: 2015/03/27 22:32:31 by mfebvay          ###   ########.fr        ;
+;    Updated: 2015/03/31 06:14:24 by mfebvay          ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -25,8 +25,8 @@ start:
 next:
 	cmp [rsi], byte 0
 	je end
-	mov r11, [rsi]
-	mov [rdi], r11
+	mov cl, [rsi]
+	mov [rdi], cl
 	inc rdi
 	inc rsi
 	jmp next

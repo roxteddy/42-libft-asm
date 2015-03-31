@@ -6,7 +6,7 @@
 ;    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/03/30 00:00:29 by mfebvay           #+#    #+#              ;
-;    Updated: 2015/03/30 02:49:25 by mfebvay          ###   ########.fr        ;
+;    Updated: 2015/03/31 06:50:22 by mfebvay          ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -31,6 +31,8 @@ puts:
 	mov rdi, 1
 	mov rax, 0x2000000 | 4
 	syscall
+	cmp rax, 0
+	jl error
 
 end:
 	push rax
@@ -39,6 +41,11 @@ end:
 	mov rdx, 1
 	mov rax, 0x2000000 | 4
 	syscall
+	cmp rax, 0
+	jl error
 	pop rax
 	inc rax
+	ret
+
+error:
 	ret
