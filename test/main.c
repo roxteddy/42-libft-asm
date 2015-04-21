@@ -124,6 +124,9 @@ int main(void)
 
 	printf("puts(str) returns %d\n", puts(str5));
 	printf("ft_puts(str) returns %d\n", ft_puts(str5));
+
+	printf("puts(NULL) return %d\n", puts(NULL));
+	printf("ft_puts(NULL) return %d\n", ft_puts(NULL));
 /*
 	close(1);
 	char str6[] = "";
