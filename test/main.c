@@ -6,8 +6,10 @@
 #include <unistd.h>
 #include "libfts.h"
 
-int main(void)
+int main(int argc, char** argv)
 {
+
+	(void)argc;
 
 /* Test de bzero */
 
@@ -201,12 +203,17 @@ int main(void)
 //	printf("\"%s\" - \"%s\"\n", str14, str15);
 //	printf("%p - %p\n", str15, ft_memcpy(str15, str16, 27));
 
+/*	Test de ft_strdup */
+
+	printf("\n>> test de ft_strdup <<\n");
+	printf("ft_strdup(\"my poney is beautiful\\n\") : %s", ft_strdup("my poney is beautiful\n"));
+
 	printf("%d/4\n", count);
-/*
-	int fd = open("ft_bzero.s", O_RDONLY);
-	ft_cat(0);
+
+	int fd = open(*argv, O_RDONLY);
+	ft_cat(fd);
 	close(fd);
-*/
+
 
 	return (0);
 }
