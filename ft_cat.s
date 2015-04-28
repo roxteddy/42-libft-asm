@@ -6,7 +6,7 @@
 ;    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/03/29 18:41:25 by mfebvay           #+#    #+#              ;
-;    Updated: 2015/04/28 20:11:06 by mfebvay          ###   ########.fr        ;
+;    Updated: 2015/04/28 21:03:38 by mfebvay          ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -45,8 +45,8 @@ write:
 	mov rax, MACH_SYSCALL(WRITE)
 	syscall
 	pop rax
-	cmp rax, 16					; if read return < 16 then it is finished
-	je read
+	cmp rax, 0					; if read return < 16 then it is finished
+	jne read
 
 end:
 	mov rsp, rbp				; restore stack and base pointers

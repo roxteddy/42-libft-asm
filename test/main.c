@@ -202,18 +202,34 @@ int main(int argc, char** argv)
 	count += ((ft_memcpy(str15, str16, 27) == str15) && !strcmp(str14, str15)) ? 1 : 0;
 //	printf("\"%s\" - \"%s\"\n", str14, str15);
 //	printf("%p - %p\n", str15, ft_memcpy(str15, str16, 27));
+	printf("%d/4\n", count);
+
 
 /*	Test de ft_strdup */
 
 	printf("\n>> test de ft_strdup <<\n");
-	printf("ft_strdup(\"my poney is beautiful\\n\") : %s", ft_strdup("my poney is beautiful\n"));
+	printf("ft_strdup(\"my poney is beautiful\\n\") => %s", ft_strdup("my poney is beautiful\n"));
 
-	printf("%d/4\n", count);
+/* Test de ft_cat */
 
+	printf("\n>> test de ft_cat <<\n");
 	int fd = open(*argv, O_RDONLY);
 	ft_cat(fd);
 	close(fd);
+	(void)argv;
 
+/*	Test de ft_pow */
+
+	printf("\n>> test de ft_pow <<\n");
+	printf("ft_pow(2, 4) = %d\n", ft_pow(2, 4));
+	printf("ft_pow(10, 9) = %d\n", ft_pow(10, 9));
+
+/*	Test de ft_abs */
+
+	printf("\n>> test de ft_abd <<\n");
+	printf("ft_abs(1000) = %d\n", ft_abs(2147483647));
+	printf("ft_abs(1000) = %d\n", ft_abs(0));
+	printf("ft_abs(1000) = %d\n", ft_abs(-2147483647));
 
 	return (0);
 }

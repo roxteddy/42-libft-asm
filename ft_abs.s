@@ -6,7 +6,7 @@
 ;    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/04/27 16:15:01 by mfebvay           #+#    #+#              ;
-;    Updated: 2015/04/27 16:16:56 by mfebvay          ###   ########.fr        ;
+;    Updated: 2015/04/28 22:27:51 by mfebvay          ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -15,9 +15,10 @@ global _ft_abs
 
 _ft_abs:
 	mov rax, rdi
-	cmp rax, 0
-	jae end
-	neg rax
+	cmp eax, 0				
+	jl neg						
+	ret
 
-end:
+neg:
+	neg rax
 	ret
