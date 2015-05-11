@@ -6,7 +6,7 @@
 /*   By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/31 03:38:08 by mfebvay           #+#    #+#             */
-/*   Updated: 2015/04/28 21:40:59 by mfebvay          ###   ########.fr       */
+/*   Updated: 2015/05/11 12:07:07 by mfebvay          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,6 @@ int		ft_pow(int n, int pow);
 // pow must be >= 0. Unspecified behaviour on integer overflow.
 
 int		ft_abs(int n);
-
+char	*ft_strchr(const char *s, int c);
+void	ft_strclr(char *s);
+int		ft_strcmp(const char *s1, const char *s2);

@@ -226,10 +226,51 @@ int main(int argc, char** argv)
 
 /*	Test de ft_abs */
 
-	printf("\n>> test de ft_abd <<\n");
+	printf("\n>> test de ft_abs <<\n");
 	printf("ft_abs(1000) = %d\n", ft_abs(2147483647));
 	printf("ft_abs(1000) = %d\n", ft_abs(0));
 	printf("ft_abs(1000) = %d\n", ft_abs(-2147483647));
+
+/* Test de ft_strchr */
+
+	char	str17[] = "abcde";
+
+	printf("\n>> test de ft_strchr <<\n");
+
+	printf("str17 = %s\n", str17);
+	printf("strchr(str17, \'a\') > %p\n", strchr(str17, 'a'));
+	printf("ft_strchr(str17, \'a\') > %p\n", ft_strchr(str17, 'a'));
+	printf("strchr(str17, \'e\') > %p\n", strchr(str17, 'e'));
+	printf("ft_strchr(str17, \'e\') > %p\n", ft_strchr(str17, 'e'));
+	printf("strchr(str17, \'z\') > %p\n", strchr(str17, 'z'));
+	printf("ft_strchr(str17, \'z\') > %p\n", ft_strchr(str17, 'z'));
+	printf("strchr(str17, 0) > %p\n", strchr(str17, 0));
+	printf("ft_strchr(str17, 0) > %p\n", ft_strchr(str17, 0));
+
+
+/* Test de ft_strcmp */
+
+	count = 0;
+
+	printf("\n>> test de ft_strcmp <<\n");
+	
+	count += ft_strcmp(str17, "abcde") == strcmp(str17, "abcde") ? 1 : 0;
+	count += ft_strcmp(str17, "abce") == strcmp(str17, "abce") ? 1 : 0;
+	count += ft_strcmp(str17, "") == strcmp(str17, "") ? 1 : 0;
+	count += ft_strcmp("", "abcde") == strcmp("", "abcde") ? 1 : 0;
+	count += ft_strcmp("", "") == strcmp("", "") ? 1 : 0;
+
+	printf("%d/5\n", count);
+
+/* Test de ft_strclr */
+
+    char str18[] = "abcd";
+
+    printf("\n>> Test de ft_strclr <<\n\n");
+    printf("str18 = \"%c%c%c%c\"\n", str18[0], str18[1], str18[2], str18[3]);
+    printf("ft_strclr(str18)\n");
+	ft_strclr(str18);
+    printf("str18 = \"%c%c%c%c\"\n", str18[0], str18[1], str18[2], str18[3]);
 
 	return (0);
 }

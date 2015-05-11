@@ -6,7 +6,7 @@
 #    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/20 19:47:44 by mfebvay           #+#    #+#              #
-#    Updated: 2015/04/28 21:15:02 by mfebvay          ###   ########.fr        #
+#    Updated: 2015/05/11 11:57:00 by mfebvay          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -17,7 +17,8 @@ ASM		=	nasm -f macho64
 SRC		= 	ft_bzero.s ft_isalpha.s ft_isdigit.s ft_isalnum.s ft_isascii.s \
 			ft_isprint.s ft_strcat.s ft_strlen.s ft_toupper.s ft_tolower.s \
 			ft_cat.s ft_puts.s ft_memset.s ft_memcpy.s ft_strdup.s ft_pow.s \
-			ft_abs.s
+			ft_abs.s ft_strchr.s ft_strclr.s ft_strcmp.s
+
 OBJ		= $(SRC:%.s=%.o)
 
 all: $(NAME)

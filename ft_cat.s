@@ -6,7 +6,7 @@
 ;    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/03/29 18:41:25 by mfebvay           #+#    #+#              ;
-;    Updated: 2015/04/28 21:03:38 by mfebvay          ###   ########.fr        ;
+;    Updated: 2015/05/11 11:49:51 by mfebvay          ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -18,7 +18,7 @@
 %define SEEK_CUR 1
 
 section .text
-	global _ft_cat
+global _ft_cat
 
 _ft_cat:
 	push rbp					; save base pointer
