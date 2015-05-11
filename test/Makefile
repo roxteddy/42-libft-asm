@@ -6,7 +6,7 @@
 #    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/20 19:47:44 by mfebvay           #+#    #+#              #
-#    Updated: 2015/03/31 06:40:15 by mfebvay          ###   ########.fr        #
+#    Updated: 2015/05/11 13:29:29 by mfebvay          ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -27,9 +27,12 @@ libfts:
 	make -C ..
 
 clean:
+	make -C .. clean
 	/bin/rm -f main.o
 
-fclean: clean
+fclean:
+	make -C .. fclean
+	/bin/rm -f main.o
 	/bin/rm -f $(NAME)
 
 re: fclean all

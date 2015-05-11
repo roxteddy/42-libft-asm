@@ -6,7 +6,7 @@
 ;    By: mfebvay <mfebvay@student.42.fr>            +#+  +:+       +#+         ;
 ;                                                 +#+#+#+#+#+   +#+            ;
 ;    Created: 2015/03/29 18:41:25 by mfebvay           #+#    #+#              ;
-;    Updated: 2015/05/11 11:49:51 by mfebvay          ###   ########.fr        ;
+;    Updated: 2015/05/11 16:09:00 by mfebvay          ###   ########.fr        ;
 ;                                                                              ;
 ;******************************************************************************;
 
@@ -33,6 +33,7 @@ read:
 	mov rdx, 16					; 3rd param - buffer size
 	mov rax, MACH_SYSCALL(READ)
 	syscall
+	jc end
 	cmp rax, 0					; if read return <= 0 jump to end
 	jng end
 
@@ -44,6 +45,7 @@ write:
 	mov rdx, rax				; 3rd param - read return
 	mov rax, MACH_SYSCALL(WRITE)
 	syscall
+	jc end
 	pop rax
 	cmp rax, 0					; if read return < 16 then it is finished
 	jne read
